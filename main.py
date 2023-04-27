@@ -13,7 +13,7 @@ player_one.shape("turtle")
 player_one.penup()
 player_one.goto(-200,100)
 
-# Player2
+#Player2
 player_two = turtle.Turtle()
 player_two.color("blue")
 player_two.shape("turtle")
@@ -39,4 +39,4 @@ player_two.goto(-200,-100)
 init([player_one, player_two])
 start_game()
 
-#turtle.Screen().exitonclick()
+turtle.Screen().exitonclick()

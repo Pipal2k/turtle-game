@@ -4,9 +4,6 @@ import random
 import time
 from functools import partial
 
-# global die
-# global players
-# global currentPlayer
 
 def erasableWrite(x,y, msg, vanishSec, color, reuse=None):
     
@@ -74,11 +71,11 @@ def enter(erasable):
 def start_game():
     
     #writeMessage("Player 1 bitte würfeln (ENTER drücken)")
-    eraseble = erasableWrite(0,200, "Hi! let's start he game!",2,"black")
+    eraseble = erasableWrite(0,200, "Hi! let's start the game!",2,"black")
          
     erasableWrite(0,200,"Player "+ str(currentPlayer+1) +" bitte würfeln (ENTER drücken)",0,players[currentPlayer].color()[0],eraseble)
     listen()
     #writeMessage("Player "+ str(currentPlayer+1) +"bitte würfeln (ENTER drücken)")
-    onkey(partial(enter, eraseble), "z")
+    onkey(partial(enter, eraseble), "Return")
     mainloop()
             
