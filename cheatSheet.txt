@@ -1,3 +1,5 @@
+turtle.title("Mein Turtle Window")
+
 # Player1
 player_one = turtle.Turtle()
 player_one.color("green")
@@ -27,6 +29,4 @@ player_two.circle(40)
 player_two.penup()
 player_two.goto(-200,-100)
 
-
 init([player_one, player_two])
-start_game()
