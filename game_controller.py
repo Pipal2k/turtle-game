@@ -58,11 +58,11 @@ def enter(erasable):
         erasableWrite(0,200,"Würfel: "+ str(die_outcome),1,players[currentPlayer].color()[0],erasable)
         players[currentPlayer].fd(20*die_outcome)
         
-        if players[0].pos() >= (300,100):
+        if players[0].pos() >= (280,100):
                 print("Player One Wins!")
                 erasableWrite(0,200,"Player 1 WINS!",0,players[currentPlayer].color()[0],erasable)
                 winner=True
-        elif players[1].pos() >= (300,-100):
+        elif players[1].pos() >= (280,-100):
                 print("Player Two Wins!")
                 erasableWrite(0,200,"Player 2 WINS!",0,players[currentPlayer].color()[0],erasable)
                 winner=True
@@ -75,10 +75,15 @@ def start_game():
     
     #writeMessage("Player 1 bitte würfeln (ENTER drücken)")
     eraseble = erasableWrite(0,200, "Hi! let's start the game!",2,"black")
-         
-    erasableWrite(0,200,"Player "+ str(currentPlayer+1) +" bitte würfeln (ENTER drücken)",0,players[currentPlayer].color()[0],eraseble)
-    listen()
+    try: 
+        players
+        erasableWrite(0,200,"Player "+ str(currentPlayer+1) +" bitte würfeln (ENTER drücken)",0,players[currentPlayer].color()[0],eraseble)
+        listen()
+    
     #writeMessage("Player "+ str(currentPlayer+1) +"bitte würfeln (ENTER drücken)")
-    onkey(partial(enter, eraseble), "Return")
+        onkey(partial(enter, eraseble), "Return")
+    except:
+         print("No players defined");
+           
     mainloop()
             
